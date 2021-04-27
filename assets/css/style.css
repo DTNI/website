@@ -1047,7 +1047,7 @@ section {
 
 .team .member .member-info-content {
   position: absolute;
-  left: 50px;
+  left: 0px;
   right: 0;
   top: 10px;
   transition: bottom 0.4s;
@@ -1065,10 +1065,6 @@ section {
   display: block;
   font-size: 13px;
   color: #fff;
-}
-
-.team .member .no-social{
-  left: 0 !important;
 }
 
 .team .member .member-info-detail {
