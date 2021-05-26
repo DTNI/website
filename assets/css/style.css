@@ -355,7 +355,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: calc(100vh - 70px);
   /*background: url("../img/hero4.jpg");*/
-  background: url("../img/background_smile2.jpg");
+  /*background: url("../img/background_smile2.jpg");*/
+  background: url("../img/bg-smile2.jpg");
   background-size: cover;
   position: relative;
   margin-top: 70px;
@@ -674,6 +675,7 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   padding: 30px;
+  width: 100%;
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -696,8 +698,8 @@ section {
 
 .services .title {
   font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 24px;
+  text-align: center;
 }
 
 .services .title a {
@@ -708,22 +710,6 @@ section {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
-}
-
-.services .icon-box-pink .icon i {
-  color: #ff689b;
-}
-
-.services .icon-box-cyan .icon i {
-  color: #3fcdc7;
-}
-
-.services .icon-box-green .icon i {
-  color: #41cf2e;
-}
-
-.services .icon-box-blue .icon i {
-  color: #2282ff;
 }
 
 /*--------------------------------------------------------------
@@ -1629,8 +1615,25 @@ section {
 
 .graph {
   display: inline-block !important;
-  width: 48% !important;
-  height: 400px !important;
+  width: 45% !important;
+  height: 250px !important;
+}
+
+
+.services .icon-box-pink .title {
+  color: #ff689b;
+}
+
+.services .icon-box-cyan .title {
+  color: #3fcdc7;
+}
+
+.services .icon-box-green .title {
+  color: #41cf2e;
+}
+
+.services .icon-box-blue .title {
+  color: #2783d6;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -1668,6 +1671,6 @@ section {
   .graph {
     display: inline-block !important;
     width: 100% !important;
-    height: 400px !important;
+    height: 250px !important;
   }
 }

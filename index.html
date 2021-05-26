@@ -121,17 +121,45 @@
 
     <!-- ====== Our Fund ======= -->
     <section id="graph" class="section-bg">
-      <div class="section-title" data-aos="fade-up" style="padding-bottom: 10px;">
-        <h2>Our Fund</h2>
-      </div>
       <div class="container" data-aos="fade-up">
-        <div style="margin:0 auto;">
+        <div class="section-title" data-aos="fade-up" style="padding-bottom: 10px;">
+          <h2>Our Fund</h2>
+        </div>
+
+        <div style="text-align: center;">
           <canvas id="aum_amount" class="graph">
 
           </canvas>
           <canvas id="invested_amount" class="graph">
 
           </canvas>
+        </div>
+        <div class="services">
+          <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+              <div class="icon-box icon-box-blue">
+                <h4 class="title">&#8361;<span class="count">250</span> Billion+ AUM</h4>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box icon-box-blue">
+                <h4 class="title"><span class="count">3</span> Unicorns</h4>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box icon-box-blue">
+                <h4 class="title"><span class="count">14</span>+ IPO and Exits</h4>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box icon-box-blue">
+                <h4 class="title"><span class="count">120</span>+ Portfolio</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <script type="text/javascript">
@@ -172,7 +200,6 @@
                 text: 'Total AUM',
                 position: 'top',
                 font: {
-                  style: 'bold',
                   size: '24'
                 }
               },
@@ -234,7 +261,6 @@
                 text: 'Total Invested',
                 position: 'top',
                 font: {
-                  style: 'bold',
                   size: '24'
                 }
               },
@@ -259,6 +285,38 @@
             }
           },
         });
+
+        //retrieve all counters from body
+        let counters = document.getElementsByClassName('count');
+
+        //retrieve all counter value
+        let vals = Array.from(counters).map(x => Number(x.innerHTML));
+
+        //convert counters element collection to an array
+        counters = Array.from(counters);
+
+        //loop through all counters
+        counters.forEach(el => {
+          //set counter to 0
+          el.innerHTML = '0';
+          //set 'internal' counter to 0 -> obviously this isn't super efficient
+          //could be faster if you used an array instead
+          el.counter = 0;
+        });
+
+        //execute this function as often as possible using requestAnimationFrame()
+        let update = () => {
+          //loop through all counters
+          counters.forEach((el, i) => {
+            //add one to 'internal counter'
+            el.counter += 1;
+            //update counter display value min(max, currentVal + 1)
+            el.innerHTML = Math.min(vals[i], el.counter);
+          });
+          requestAnimationFrame(update);
+        }
+        update();
+
       </script>
     </section>
 
@@ -278,7 +336,7 @@
                 <img src="assets/img/logo/people_bio.png" class="rounded mx-auto d-block" alt="PeopleBio">
                 <img src="assets/img/logo/wadiz.png" class="rounded mx-auto d-block" alt="Wadiz">
                 <img src="assets/img/logo/philoptics.png" class="rounded mx-auto d-block" alt="Philoptics">
-                <img src="assets/img/logo/sga.png" class="rounded mx-auto d-block" alt="SGA Co., Ltd.">
+                <img src="assets/img/logo/doubleugames.png" class="rounded mx-auto d-block" alt="DoubleU Games">
               </div>
             </div><!-- End testimonial item -->
             <div class="swiper-slide">
@@ -294,44 +352,45 @@
               <div class="testimonial-item">
                 <img src="assets/img/logo/carver_korea.png" class="rounded mx-auto d-block" alt="cafe 24">
                 <img src="assets/img/logo/bonne.png" class="rounded mx-auto d-block" alt="Bonne">
-                <img src="assets/img/logo/jsfood.png" class="rounded mx-auto d-block" alt="JS Food">
-                <img src="assets/img/logo/signet.png" class="rounded mx-auto d-block" alt="SIGNET EV">
+                <img src="assets/img/logo/remed.png" class="rounded mx-auto d-block" alt="REMED">
+                <img src="assets/img/logo/bridgebio.png" class="rounded mx-auto d-block" alt="bridgebio therapeutics">
               </div>
             </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/logo/inno_therapy.png" class="rounded mx-auto d-block" alt="InnoTherapy">
-                <img src="assets/img/logo/cellid.png" class="rounded mx-auto d-block" alt="Cellid">
-                <img src="assets/img/logo/its_skin.png" class="rounded mx-auto d-block" alt="It's Skin">
-                <img src="assets/img/logo/sdcfood.png" class="rounded mx-auto d-block" alt="SDC Food">
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/logo/remed.png" class="rounded mx-auto d-block" alt="REMED">
-                <img src="assets/img/logo/nextin.png" class="rounded mx-auto d-block" alt="NEXTIN">
-                <img src="assets/img/logo/olipass.png" class="rounded mx-auto d-block" alt="OliPass">
-                <img src="assets/img/logo/bridgebio.png" class="rounded mx-auto d-block" alt="bridgebio therapeutics">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/logo/propzy.png" class="rounded mx-auto d-block" alt="PROPZY">
                 <img src="assets/img/logo/kang_stem_biotech.png" class="rounded mx-auto d-block" alt="Kang Stem Biotech">
                 <img src="assets/img/logo/neofect.png" class="rounded mx-auto d-block" alt="Neofect">
                 <img src="assets/img/logo/global_tax_free.png" class="rounded mx-auto d-block" alt="Global Tax Free">
               </div>
-            </div>
+            </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/logo/makeus.png" class="rounded mx-auto d-block" alt="Make Us">
-                <img src="assets/img/logo/biorigin.png" class="rounded mx-auto d-block" alt="Biorigin">
-                <img src="assets/img/logo/doubleugames.png" class="rounded mx-auto d-block" alt="DoubleU Games">
+                <img src="assets/img/logo/nextin.png" class="rounded mx-auto d-block" alt="NEXTIN">
+                <img src="assets/img/logo/cellid.png" class="rounded mx-auto d-block" alt="Cellid">
               </div>
-            </div><!-- End testimonial item -->
+            </div>
+
+<!--            <div class="swiper-slide">-->
+<!--              <div class="testimonial-item">-->
+<!--                <img src="assets/img/logo/jsfood.png" class="rounded mx-auto d-block" alt="JS Food">-->
+<!--                <img src="assets/img/logo/signet.png" class="rounded mx-auto d-block" alt="SIGNET EV">-->
+<!--                <img src="assets/img/logo/makeus.png" class="rounded mx-auto d-block" alt="Make Us">-->
+<!--                <img src="assets/img/logo/olipass.png" class="rounded mx-auto d-block" alt="OliPass">-->
+<!--              </div>-->
+<!--            </div>&lt;!&ndash; End testimonial item &ndash;&gt;-->
+<!--            <div class="swiper-slide">-->
+<!--              <div class="testimonial-item">-->
+<!--                <img src="assets/img/logo/propzy.png" class="rounded mx-auto d-block" alt="PROPZY">-->
+<!--                <img src="assets/img/logo/its_skin.png" class="rounded mx-auto d-block" alt="It's Skin">-->
+<!--                <img src="assets/img/logo/sdcfood.png" class="rounded mx-auto d-block" alt="SDC Food">-->
+<!--                <img src="assets/img/logo/sga.png" class="rounded mx-auto d-block" alt="SGA Co., Ltd.">-->
+<!--                <img src="assets/img/logo/biorigin.png" class="rounded mx-auto d-block" alt="Biorigin">-->
+<!--              </div>-->
+<!--            </div>-->
+  <!-- End testimonial item -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
