@@ -1614,9 +1614,9 @@ section {
 }
 
 .graph {
-  display: inline-block !important;
-  width: 45% !important;
-  height: 250px !important;
+  display: inline-block;
+  width: 45%;
+  max-height: 300px;
 }
 
 
@@ -1632,7 +1632,7 @@ section {
   color: #41cf2e;
 }
 
-.services .icon-box-blue .title {
+.services .icon-box-blue .title .count {
   color: #2783d6;
 }
 
@@ -1669,8 +1669,8 @@ section {
   }
 
   .graph {
-    display: inline-block !important;
-    width: 100% !important;
-    height: 250px !important;
+    display: inline-block;
+    width: 100%;
+    max-height: 100%;
   }
 }
