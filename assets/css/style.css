@@ -698,7 +698,7 @@ section {
 
 .services .title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -1634,6 +1634,7 @@ section {
 
 .services .icon-box-blue .title .count {
   color: #2783d6;
+  font-size: 24px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
