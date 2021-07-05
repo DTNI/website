@@ -835,6 +835,9 @@ section {
   z-index: 1;
  /*background: rgba(0, 0, 0, 0.6);*/
   background: rgba(0, 0, 0, 0);
+}
+
+.portfolio img {
   border: 1px solid #e8e8e8;
 }
 
