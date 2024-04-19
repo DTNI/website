@@ -1270,6 +1270,31 @@
             </div>
           </div>
 
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="assets/img/people/taeeun_choi.jpg" class="img-fluid" alt="Taeeun Choi">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4 data-i18n="manager4">Choi, Taeeun</h4>
+                  <span data-i18n="manager">Manager</span>
+                </div>
+                <div class="member-info-detail">
+                  <h5 data-i18n="mr">
+                    Major Responsibilities
+                  </h5>
+                  <span>
+                   Accounting, Fund Administration
+                  </span>
+                  <h5 data-i18n="major-career">
+                    Major career
+                  </h5>
+                  <span data-i18n="manager4-career">
+                    Seoul Investment Partners
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1598,14 +1623,23 @@
 
     //execute this function as often as possible using requestAnimationFrame()
     let update = () => {
+      let stopper = true;
       //loop through all counters
       counters.forEach((el, i) => {
         //add one to 'internal counter'
-        el.counter += 1;
+        stopper &= vals[i] < el.counter;
+        if (vals[i] > 3 && (el.counter < (vals[i]-3))) {
+          el.counter += 3;
+        } else {
+          el.counter += 1;
+        }
         //update counter display value min(max, currentVal + 1)
         el.innerHTML = Math.min(vals[i], el.counter);
       });
-      requestAnimationFrame(update);
+
+      if (!stopper) {
+        requestAnimationFrame(update);
+      }
     }
     update();
 
